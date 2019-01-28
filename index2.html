@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <title>Document</title>
+  <script src="js/anime.js"></script>
+</head>
+<style>
+  ul,
+  li {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  html,
+  body {
+    position: relative;
+    height: 100vh;
+    width: 100vw;
+    overflow: hidden;
+    overflow-y: auto;
+    margin: 0;
+    padding: 0;
+  }
+
+  .test {
+    width: 90px;
+    height: 90px;
+    background-color: black;
+    position: absolute;
+  }
+
+  .test2 {
+    border-radius: 50%;
+    top: 200px;
+  }
+
+  .A {
+    height: 200px;
+    position: relative;
+    margin-top: 380px;
+    border: 1px solid rosybrown;
+  }
+
+  .B {
+    height: 300px;
+    position: relative;
+    border: 1px solid rosybrown;
+  }
+
+  .B .test {
+    width: 100px;
+    height: 100px;
+  }
+
+  .C {
+    position: relative;
+    height: 200px;
+  }
+
+  .test {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+</style>
+
+<body>
+  <div class="test test0"></div>
+  <div class="test test1"></div>
+  <div class="test test2"></div>
+
+  <ul class="A">
+    <li class="test" style="left: 0;"></li>
+    <li class="test" style="left: 100px;"></li>
+    <li class="test" style="left: 200px;"></li>
+    <li class="test" style="left: 300px;"></li>
+    <li class="test" style="left: 400px;"></li>
+  </ul>
+  <ul class="B">
+    <li class="test" style="left: 0;"></li>
+    <li class="test" style="left: 100px;"></li>
+    <li class="test" style="left: 200px;"></li>
+    <li class="test" style="left: 300px;"></li>
+    <li class="test" style="left: 400px;"></li>
+    <li class="test" style="left: 0;top: 100px"></li>
+    <li class="test" style="left: 100px;top: 100px"></li>
+    <li class="test" style="left: 200px;top: 100px"></li>
+    <li class="test" style="left: 300px;top: 100px"></li>
+    <li class="test" style="left: 400px;top: 100px"></li>
+    <li class="test" style="left: 0;top: 200px"></li>
+    <li class="test" style="left: 100px;top: 200px"></li>
+    <li class="test" style="left: 200px;top: 200px"></li>
+    <li class="test" style="left: 300px;top: 200px"></li>
+    <li class="test" style="left: 400px;top: 200px"></li>
+  </ul>
+
+  <div class="C">
+    <svg class="svg0" style="display: none;">
+      <path d="M8,56 C8,33.90861 25.90861,16 48,16 C70.09139,16 88,33.90861 88,56 C88,78.09139 105.90861,92 128,92 C150.09139,92
+          160,72 160,56 C160,40 148,24 128,24 C108,24 96,40 96,56 C96,72 105.90861,92 128,92 C154,93 168,78 168,56 C168,33.90861
+          185.90861,16 208,16 C230.09139,16 248,33.90861 248,56 C248,78.09139 230.09139,96 208,96 L48,96 C25.90861,96 8,78.09139
+          8,56 Z"></path>
+    </svg>
+    <div class="test"></div>
+  </div>
+</body>
+<script>
+  anime({
+    // 数据都可以加个随机
+    // targets: "div",
+    // translateX: [{ value: 100, duration: 1200 }, { value: 0, duration: 800 }],
+    // rotate: "1turn",
+    // backgroundColor: "#FFF",
+    // duration: 2000,
+    targets: ".test0",
+    left: "20%",
+    rotate: "45deg",
+    // rotateX: "120deg", // x轴垂直翻转
+    // rotateY: "120deg",
+    translateX: "10rem",
+    // borderRadius: ["0", "50%"], // 从0 到 50
+    scale: 2, // 缩放
+    // scaleX: 2, // 宽
+    // scaleY: 2, // 高
+    easing: "easeInOutQuad", // linear // easeInOutExpo // 开始慢，后来快 // 默认的话会有回弹 // steps(5) // 间断性
+    opacity: 0.8,
+    backgroundColor: "#d72e2e"
+    // innerHTML: [0, 10000], // 数值变动 (这俩应该用不到)
+    // round: 1 // 搭配文字，小数点几位
+
+    // delay: 500 // 延迟几秒执行
+
+    // endDelay: 1000 // 几秒后执行A
+    // direction: "alternate" // A：返回原来的样子 // reverse // 从结果返回 // normal // 正常 // 或者填写总共的时间 1000
+    // loop: true, // 循环
+
+    // skew: "30deg"
+    // skewX: "30deg", // 宽度进行扭曲
+    // skewY: "30deg" // 高度进行扭曲
+  });
+  anime({
+    targets: ".test1",
+    // width: "100%", // 变换宽度
+    // height: "100%", // 变换宽度
+    translateX: {
+      value: 100,
+      duration: 800 // 控制时间
+    },
+    rotate: {
+      value: 360,
+      duration: 1800,
+      easing: "easeInOutSine"
+    },
+    scale: {
+      value: 2,
+      duration: 1600,
+      delay: 800,
+      easing: "easeInOutQuart"
+    },
+    delay: 250 // 延迟
+  });
+  anime({
+    targets: ".test2",
+    translateX: [{
+        value: 250,
+        duration: 1000,
+        delay: 500
+      },
+      {
+        value: 0,
+        duration: 1000,
+        delay: 500
+      }
+    ],
+    translateY: [{
+        value: -40,
+        duration: 500
+      },
+      {
+        value: 40,
+        duration: 500,
+        delay: 1000
+      }
+    ],
+    scaleX: [{
+        value: 4,
+        duration: 100,
+        delay: 500
+      },
+      {
+        value: 1,
+        duration: 900
+      },
+      {
+        value: 4,
+        duration: 100,
+        delay: 500
+      },
+      {
+        value: 1,
+        duration: 900
+      }
+    ],
+    scaleY: [{
+        value: 1.5,
+        duration: 100
+      },
+      {
+        value: 1,
+        duration: 400
+      },
+      {
+        value: 1.5,
+        duration: 100,
+        delay: 1000
+      },
+      {
+        value: 1,
+        duration: 400
+      }
+    ]
+    // loop: true
+  });
+  anime({
+    targets: ".A .test",
+    translateY: 100,
+    // loop: true,
+    rotate: anime.stagger([-360, 360]),
+    delay: anime.stagger(100, {
+      start: 500,
+      from: "center"
+      // easing: "easeOutQuad"
+      // direction: "reverse" // 底部开始
+    }) // 间隔几秒, 500秒后开始,中间开始
+  });
+  anime({
+    targets: ".B .test",
+    scale: [{
+        value: 0,
+        easing: "easeOutSine",
+        duration: 500
+      }, // 开始快
+      {
+        value: 1,
+        easing: "easeInOutQuad",
+        duration: 1200
+      } // 慢
+      // { value: 0, easing: "easeOutSine", duration: 1700 },
+      // { value: 1, easing: "easeInOutQuad", duration: 2500 }
+    ],
+    // translateX: anime.stagger(10, {
+    //   grid: [5, 3],
+    //   from: "center",
+    //   axis: "x"
+    // }),
+    // translateY: anime.stagger(10, {
+    //   grid: [5, 3],
+    //   from: "center",
+    //   axis: "y"
+    // }),
+    // rotateZ: anime.stagger([0, 90], {
+    //   grid: [5, 3],
+    //   from: "center",
+    //   axis: "x"
+    // }),
+    delay: anime.stagger(200, {
+      grid: [5, 3],
+      from: "center"
+    }) // 宽，高，从中间执行
+  });
+  var C = anime.path(".svg0 path");
+  // 先在https://codepen.io/anthonydugois/pen/mewdyZ绘制图形
+  // 选择好画布的宽高
+  // ok后复制右下角的数字路径
+  // 到http://www.zuohaotu.com/svg/页面
+  // 选择视图 - 源文件
+  // <svg width="1151" height="563" xmlns="http://www.w3.org/2000/svg">
+  //   <path id="svg_2" d="放这儿" />
+  // </svg>
+  // 确定后，再到打开源文件，把path 的d再复制出来，即可
+  anime({
+    targets: ".C .test",
+    translateX: C("x"),
+    translateY: C("y"),
+    rotate: C("angle"),
+    easing: "linear",
+    duration: 2000
+    // loop: true
+  });
+</script>
+
+</html>
